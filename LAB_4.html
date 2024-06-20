@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Залишити відгук</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .rating {
+            display: flex;
+            gap: 5px;
+        }
+        .rating input {
+            margin: 0;
+        }
+        .rating label {
+            margin: 0;
+        }
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .file-upload {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .buttons input {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .buttons input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .buttons input[type="reset"] {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <h1>Залишити відгук</h1>
+    <form action="your-script.php" method="post" enctype="multipart/form-data">
+        <label for="name">Ім'я:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Електронна адреса:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="phone">Номер телефону:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="review">Відгук:</label>
+        <textarea id="review" name="review" rows="4" placeholder="Ваш відгук" required></textarea>
+
+        <label>Ваша оцінка:</label>
+        <div class="rating">
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4">★</label>
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5">★</label>
+        </div>
+
+        <label>Що саме вам подобається в грі?</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="likes[]" value="Графіка"> Графіка</label>
+            <label><input type="checkbox" name="likes[]" value="Великий світ"> Великий світ</label>
+            <label><input type="checkbox" name="likes[]" value="Безліч можливостей"> Безліч можливостей</label>
+            <label><input type="checkbox" name="likes[]" value="Онлайн гра"> Онлайн гра</label>
+            <label><input type="checkbox" name="likes[]" value="Інше"> Інше</label>
+        </div>
+
+        <label for="source">Як ви дізнались про нашу гру?</label>
+        <select id="source" name="source">
+            <option value="Соціальні мережі">Через соціальні мережі</option>
+            <option value="Друзі">Друзі</option>
+            <option value="Реклама">Реклама</option>
+            <option value="Інше">Інше</option>
+        </select>
+
+        <label for="screenshot">Завантажити фото з гри:</label>
+        <input type="file" id="screenshot" name="screenshot">
+
+        <div class="buttons">
+            <input type="reset" value="Очистити">
+            <input type="submit" value="Відправити">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
